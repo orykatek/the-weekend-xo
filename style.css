@@ -1,55 +1,374 @@
 
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#03050a;--panel:#08101d;--blue:#142a50;--white:#f5f7fb;--muted:#8e98aa;--line:rgba(255,255,255,.11)}
-html,body{width:100%;height:100%;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
-body{overflow:hidden}
-a{color:inherit;text-decoration:none}
-.site{height:100vh;overflow:hidden;background:radial-gradient(circle at 75% 35%,rgba(25,55,110,.20),transparent 38%),var(--bg)}
-.nav{position:fixed;top:0;left:0;right:0;height:76px;display:flex;align-items:center;padding:0 46px;background:rgba(3,5,10,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);z-index:100}
-.logo{font-weight:800;font-size:20px;letter-spacing:8px;margin-right:60px}
-.menu{display:flex;gap:30px;align-items:center;overflow:hidden}
-.menu a{font-size:10px;letter-spacing:2px;opacity:.55;white-space:nowrap;transition:.3s}
-.menu a:hover,.menu a.active{opacity:1}
-.page{height:100vh;padding:76px 0 0;overflow:hidden}
-.section{height:calc(100vh - 76px);max-width:1450px;margin:auto;padding:72px 70px;overflow:hidden}
-.eyebrow{font-size:10px;letter-spacing:5px;color:#fff;opacity:.42}
-.title{font-size:clamp(48px,7vw,110px);line-height:.9;letter-spacing:8px;margin:18px 0 25px}
-.lead{max-width:760px;color:var(--muted);line-height:1.8;font-size:14px}
-.home{height:100vh;display:grid;place-items:center;text-align:center;padding:0 25px}
-.home h1{font-size:clamp(70px,12vw,165px);line-height:.82;letter-spacing:10px;margin:25px 0}
-.home p{max-width:650px;margin:auto;color:var(--muted);line-height:1.8}
-.xo{margin-top:35px;font-size:28px;letter-spacing:18px;opacity:.65;animation:pulse 2s ease-in-out infinite alternate}
-@keyframes pulse{to{transform:scale(1.07);opacity:1}}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:38px}
-.card{border:1px solid var(--line);padding:28px;background:linear-gradient(145deg,rgba(20,42,80,.22),rgba(255,255,255,.02));transition:.35s}
-.card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.35)}
-.card h2{margin:12px 0;font-size:23px}
-.card p{color:var(--muted);line-height:1.6}
-.arrow{display:block;margin-top:20px;font-size:9px;letter-spacing:2px;opacity:.5}
-.bio{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;margin-top:45px}
-.text{color:#b6bdc9;line-height:1.9;font-size:15px}
-.text p{margin-bottom:20px}
-.timeline{border-left:1px solid var(--line);padding-left:28px}
-.timeline article{margin-bottom:22px}
-.timeline b{font-size:18px}
-.timeline p{color:var(--muted);margin-top:6px;line-height:1.6}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
-.photo{aspect-ratio:4/5;border:1px solid var(--line);display:flex;align-items:flex-end;padding:18px;background:linear-gradient(145deg,#17325f,#05070c);position:relative;overflow:hidden}
-.photo:before{content:"XO";position:absolute;inset:0;display:grid;place-items:center;font-size:90px;font-weight:800;letter-spacing:12px;opacity:.07}
-.photo span{font-size:9px;letter-spacing:3px;opacity:.55}
-.note{margin-top:20px;border:1px solid var(--line);padding:15px;color:var(--muted);font-size:12px;line-height:1.6}
-.filters{display:flex;gap:10px;margin:30px 0}
-select{background:#080d16;color:#fff;border:1px solid var(--line);padding:11px 14px}
-.concert-list{height:55vh;overflow-y:auto;padding-right:8px}
-.concert{display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:20px;padding:17px;border-bottom:1px solid rgba(255,255,255,.07);align-items:center}
-.date{font-size:11px;color:#727d90}.city{font-weight:700}.venue{font-size:12px;color:#778194;margin-top:5px}.status{text-align:right;font-size:9px;letter-spacing:1.5px}.past{opacity:.38}.future{opacity:.8}.today{opacity:1}
-.albums{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:35px}
-.album{border:1px solid var(--line);padding:22px;min-height:145px;transition:.3s}.album:hover{background:#10264a33;transform:translateY(-5px)}
-.album small{opacity:.4;letter-spacing:2px}.album h2{margin:13px 0;font-size:17px}.album p{font-size:11px;color:var(--muted)}
-.tracks{height:58vh;max-width:1000px;overflow-y:auto;margin-top:28px;border-top:1px solid var(--line)}
-.track{display:flex;align-items:center;gap:18px;padding:13px 15px;border-bottom:1px solid rgba(255,255,255,.07);transition:.2s}.track:hover{background:#ffffff08;padding-left:24px}.num{width:28px;color:#667083;font-size:11px}.track-name{flex:1;font-size:13px}.yt{font-size:8px;letter-spacing:2px;opacity:.45}
-.merch{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}.item{border:1px solid var(--line);padding:15px}.product-art{aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(145deg,#17325f,#05070c);font-size:24px;letter-spacing:4px}.item h3{font-size:14px;margin:14px 0 6px}.price{color:var(--muted);font-size:12px}.button{display:inline-block;margin-top:25px;border:1px solid #fff4;padding:13px 18px;font-size:9px;letter-spacing:2px;transition:.3s}.button:hover{background:#fff;color:#000}
-.transition{position:fixed;inset:0;z-index:9999;background:radial-gradient(circle,#183565,#03050a 58%);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .35s}.transition.active{opacity:1;pointer-events:auto}.transition-xo{font-size:clamp(90px,15vw,200px);font-weight:900;letter-spacing:24px;animation:xo .9s ease-in-out infinite alternate}@keyframes xo{to{transform:scale(1.08);opacity:.45}}
-.back{display:inline-block;margin-top:18px;font-size:9px;letter-spacing:2px;opacity:.5}
-@media(max-width:1050px){.nav{padding:0 20px}.logo{margin-right:25px}.menu{gap:18px}.section{padding:55px 35px}.bio{grid-template-columns:1fr;gap:35px}.albums{grid-template-columns:repeat(2,1fr)}.merch{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.logo{display:none}.menu{width:100%;overflow-x:auto}.page{padding-top:64px}.nav{height:64px}.section{height:calc(100vh - 64px);padding:40px 18px}.grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.merch{grid-template-columns:1fr}.concert{grid-template-columns:75px 1fr}.status{grid-column:2;text-align:left}.albums{grid-template-columns:1fr 1fr}.home h1{font-size:18vw}.home p{font-size:13px}}
+/* THE WEEKND XO FANPAGE
+   Nowy, mniejszy układ desktopowy.
+   Strona jako całość nie przewija się. Przewijają się tylko panele z danymi.
+*/
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #03050a;
+    color: #f4f6fa;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: .01em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 82px;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    padding: 0 7vw;
+    background: rgba(2, 4, 9, .94);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+    backdrop-filter: blur(14px);
+}
+
+.logo,
+.logo a {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: .30em;
+    margin-right: 7vw;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 3vw, 55px);
+    height: 100%;
+}
+
+.nav a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #8f949e;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    transition: color .25s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #fff;
+}
+
+.nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 22px;
+    height: 1px;
+    background: #fff;
+}
+
+.page {
+    position: fixed;
+    inset: 82px 0 0;
+    overflow: hidden;
+    padding: 42px 7vw 36px;
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    right: -180px;
+    top: -180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(17,38,83,.24), transparent 68%);
+    pointer-events: none;
+}
+
+.page-inner {
+    position: relative;
+    z-index: 1;
+    width: min(1500px, 100%);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: #777d88;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .42em;
+    text-transform: uppercase;
+}
+
+.page-title {
+    margin: 0;
+    font-size: clamp(48px, 5vw, 78px);
+    line-height: .95;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.page-subtitle {
+    max-width: 850px;
+    margin: 13px 0 0;
+    color: #9ca5b4;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.concert-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 27px 0 18px;
+}
+
+.concert-select {
+    min-width: 190px;
+    height: 45px;
+    padding: 0 42px 0 14px;
+    border: 1px solid #39404d;
+    border-radius: 0;
+    outline: none;
+    background: #080c14;
+    color: #f4f6fa;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+}
+
+.concert-select:focus {
+    border-color: #8c96a8;
+}
+
+.concert-list {
+    min-height: 0;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #6c7480 #0a0d13;
+}
+
+.concert-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.concert-list::-webkit-scrollbar-track {
+    background: #0a0d13;
+}
+
+.concert-list::-webkit-scrollbar-thumb {
+    background: #69717e;
+}
+
+.concert-item {
+    display: grid;
+    grid-template-columns: 150px minmax(260px, 1fr) 180px;
+    align-items: center;
+    min-height: 82px;
+    padding: 15px 16px;
+    border-top: 1px solid rgba(255,255,255,.10);
+    transition: background .2s ease, padding .2s ease;
+}
+
+.concert-item:last-child {
+    border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.concert-item:hover {
+    padding-left: 22px;
+    background: rgba(18, 30, 53, .28);
+}
+
+.concert-date {
+    color: #7f8794;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .10em;
+}
+
+.concert-city {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.concert-venue {
+    margin-top: 5px;
+    color: #818b9b;
+    font-size: 13px;
+}
+
+.concert-country {
+    margin-top: 4px;
+    color: #667080;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.concert-status {
+    justify-self: end;
+    color: #8e96a4;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.concert-status.upcoming { color: #b7c8e9; }
+.concert-status.today { color: #fff; }
+
+.empty-state {
+    padding: 45px 15px;
+    color: #777f8d;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.10);
+}
+
+/* XO transition overlay */
+#xoTransition,
+.xo-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    background: #02040a;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#xoTransition::before,
+.xo-transition::before {
+    content: "";
+    position: absolute;
+    width: 34vw;
+    height: 34vw;
+    max-width: 460px;
+    max-height: 460px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,53,112,.55), rgba(3,5,10,0) 70%);
+}
+
+#xoTransition .xo-mark,
+.xo-transition .xo-mark {
+    position: relative;
+    font-size: clamp(70px, 10vw, 150px);
+    font-weight: 900;
+    letter-spacing: .18em;
+}
+
+#xoTransition.active,
+.xo-transition.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    animation: xoFade .9s ease forwards;
+}
+
+#xoTransition.active .xo-mark,
+.xo-transition.active .xo-mark {
+    animation: xoZoom .9s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes xoFade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes xoZoom {
+    0% { transform: scale(.65); opacity: 0; filter: blur(10px); }
+    35% { transform: scale(1); opacity: 1; filter: blur(0); }
+    100% { transform: scale(1.35); opacity: 0; filter: blur(3px); }
+}
+
+@media (max-width: 900px) {
+    .site-header {
+        padding: 0 24px;
+    }
+
+    .logo,
+    .logo a {
+        margin-right: 30px;
+    }
+
+    .nav {
+        gap: 18px;
+        overflow-x: auto;
+    }
+
+    .nav a {
+        font-size: 10px;
+        letter-spacing: .10em;
+        white-space: nowrap;
+    }
+
+    .page {
+        padding: 32px 24px 24px;
+    }
+
+    .concert-item {
+        grid-template-columns: 105px minmax(180px, 1fr) 115px;
+    }
+}
+
+@media (max-width: 650px) {
+    .site-header {
+        height: 70px;
+    }
+
+    .page {
+        inset: 70px 0 0;
+    }
+
+    .logo,
+    .logo a {
+        font-size: 21px;
+        margin-right: 18px;
+    }
+
+    .nav a {
+        font-size: 9px;
+    }
+
+    .page-title {
+        font-size: 42px;
+    }
+
+    .concert-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 16px 10px;
+    }
+
+    .concert-status {
+        justify-self: start;
+        text-align: left;
+    }
+}

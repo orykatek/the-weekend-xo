@@ -1,0 +1,55 @@
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#03050a;--panel:#08101d;--blue:#142a50;--white:#f5f7fb;--muted:#8e98aa;--line:rgba(255,255,255,.11)}
+html,body{width:100%;height:100%;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+body{overflow:hidden}
+a{color:inherit;text-decoration:none}
+.site{height:100vh;overflow:hidden;background:radial-gradient(circle at 75% 35%,rgba(25,55,110,.20),transparent 38%),var(--bg)}
+.nav{position:fixed;top:0;left:0;right:0;height:76px;display:flex;align-items:center;padding:0 46px;background:rgba(3,5,10,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);z-index:100}
+.logo{font-weight:800;font-size:20px;letter-spacing:8px;margin-right:60px}
+.menu{display:flex;gap:30px;align-items:center;overflow:hidden}
+.menu a{font-size:10px;letter-spacing:2px;opacity:.55;white-space:nowrap;transition:.3s}
+.menu a:hover,.menu a.active{opacity:1}
+.page{height:100vh;padding:76px 0 0;overflow:hidden}
+.section{height:calc(100vh - 76px);max-width:1450px;margin:auto;padding:72px 70px;overflow:hidden}
+.eyebrow{font-size:10px;letter-spacing:5px;color:#fff;opacity:.42}
+.title{font-size:clamp(48px,7vw,110px);line-height:.9;letter-spacing:8px;margin:18px 0 25px}
+.lead{max-width:760px;color:var(--muted);line-height:1.8;font-size:14px}
+.home{height:100vh;display:grid;place-items:center;text-align:center;padding:0 25px}
+.home h1{font-size:clamp(70px,12vw,165px);line-height:.82;letter-spacing:10px;margin:25px 0}
+.home p{max-width:650px;margin:auto;color:var(--muted);line-height:1.8}
+.xo{margin-top:35px;font-size:28px;letter-spacing:18px;opacity:.65;animation:pulse 2s ease-in-out infinite alternate}
+@keyframes pulse{to{transform:scale(1.07);opacity:1}}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:38px}
+.card{border:1px solid var(--line);padding:28px;background:linear-gradient(145deg,rgba(20,42,80,.22),rgba(255,255,255,.02));transition:.35s}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.35)}
+.card h2{margin:12px 0;font-size:23px}
+.card p{color:var(--muted);line-height:1.6}
+.arrow{display:block;margin-top:20px;font-size:9px;letter-spacing:2px;opacity:.5}
+.bio{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;margin-top:45px}
+.text{color:#b6bdc9;line-height:1.9;font-size:15px}
+.text p{margin-bottom:20px}
+.timeline{border-left:1px solid var(--line);padding-left:28px}
+.timeline article{margin-bottom:22px}
+.timeline b{font-size:18px}
+.timeline p{color:var(--muted);margin-top:6px;line-height:1.6}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.photo{aspect-ratio:4/5;border:1px solid var(--line);display:flex;align-items:flex-end;padding:18px;background:linear-gradient(145deg,#17325f,#05070c);position:relative;overflow:hidden}
+.photo:before{content:"XO";position:absolute;inset:0;display:grid;place-items:center;font-size:90px;font-weight:800;letter-spacing:12px;opacity:.07}
+.photo span{font-size:9px;letter-spacing:3px;opacity:.55}
+.note{margin-top:20px;border:1px solid var(--line);padding:15px;color:var(--muted);font-size:12px;line-height:1.6}
+.filters{display:flex;gap:10px;margin:30px 0}
+select{background:#080d16;color:#fff;border:1px solid var(--line);padding:11px 14px}
+.concert-list{height:55vh;overflow-y:auto;padding-right:8px}
+.concert{display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:20px;padding:17px;border-bottom:1px solid rgba(255,255,255,.07);align-items:center}
+.date{font-size:11px;color:#727d90}.city{font-weight:700}.venue{font-size:12px;color:#778194;margin-top:5px}.status{text-align:right;font-size:9px;letter-spacing:1.5px}.past{opacity:.38}.future{opacity:.8}.today{opacity:1}
+.albums{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:35px}
+.album{border:1px solid var(--line);padding:22px;min-height:145px;transition:.3s}.album:hover{background:#10264a33;transform:translateY(-5px)}
+.album small{opacity:.4;letter-spacing:2px}.album h2{margin:13px 0;font-size:17px}.album p{font-size:11px;color:var(--muted)}
+.tracks{height:58vh;max-width:1000px;overflow-y:auto;margin-top:28px;border-top:1px solid var(--line)}
+.track{display:flex;align-items:center;gap:18px;padding:13px 15px;border-bottom:1px solid rgba(255,255,255,.07);transition:.2s}.track:hover{background:#ffffff08;padding-left:24px}.num{width:28px;color:#667083;font-size:11px}.track-name{flex:1;font-size:13px}.yt{font-size:8px;letter-spacing:2px;opacity:.45}
+.merch{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}.item{border:1px solid var(--line);padding:15px}.product-art{aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(145deg,#17325f,#05070c);font-size:24px;letter-spacing:4px}.item h3{font-size:14px;margin:14px 0 6px}.price{color:var(--muted);font-size:12px}.button{display:inline-block;margin-top:25px;border:1px solid #fff4;padding:13px 18px;font-size:9px;letter-spacing:2px;transition:.3s}.button:hover{background:#fff;color:#000}
+.transition{position:fixed;inset:0;z-index:9999;background:radial-gradient(circle,#183565,#03050a 58%);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .35s}.transition.active{opacity:1;pointer-events:auto}.transition-xo{font-size:clamp(90px,15vw,200px);font-weight:900;letter-spacing:24px;animation:xo .9s ease-in-out infinite alternate}@keyframes xo{to{transform:scale(1.08);opacity:.45}}
+.back{display:inline-block;margin-top:18px;font-size:9px;letter-spacing:2px;opacity:.5}
+@media(max-width:1050px){.nav{padding:0 20px}.logo{margin-right:25px}.menu{gap:18px}.section{padding:55px 35px}.bio{grid-template-columns:1fr;gap:35px}.albums{grid-template-columns:repeat(2,1fr)}.merch{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.logo{display:none}.menu{width:100%;overflow-x:auto}.page{padding-top:64px}.nav{height:64px}.section{height:calc(100vh - 64px);padding:40px 18px}.grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.merch{grid-template-columns:1fr}.concert{grid-template-columns:75px 1fr}.status{grid-column:2;text-align:left}.albums{grid-template-columns:1fr 1fr}.home h1{font-size:18vw}.home p{font-size:13px}}
